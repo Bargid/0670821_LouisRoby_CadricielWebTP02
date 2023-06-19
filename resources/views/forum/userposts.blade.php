@@ -7,6 +7,10 @@
            
         </div>
 
+        <div class="top-forum">
+            <a href="{{ route('forum.create') }}" class="btn btn-sm btn-primary">@lang('lang.text_forum_add')</a>
+        </div>
+
         <div class="page-forum">
             <div class="center-forum">
                 <div class="titre-page-forum">
