@@ -15,8 +15,8 @@ class EtudiantsController extends Controller
      */
     public function index()
     {
-        $etudiants = Etudiants::all(); // Retrieve all etudiants with their associated user
-        return view('etudiants.index', ['etudiants' => $etudiants]);
+        $user = User::all(); // equivalent de Select * From blog_posts
+        return view('user.index', ['user' => $user]); // le dossier blog et ensuite index.blade.php
     }
 
     /**
@@ -24,47 +24,9 @@ class EtudiantsController extends Controller
      */
     public function create()
     {
-        $etudiants = Etudiants::all(); // Ou all, dans ce cas-ci
+        $user = User::all(); // Ou all, dans ce cas-ci
 
-        return view('etudiants.create', ['etudiants' => $etudiants]);
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'prenom' => 'required|string',
-            'nom' => 'required|string',
-            'birthdate' => 'required|date',
-            'email' => 'required|email|unique:users,email',
-            'telephone' => 'required|string',
-            'ville_id' => 'required|exists:villes,id',
-            'password' => 'required|min:6'
-        ]);
-    
-        
-        // Création du User en relation avec l'étudiant, dans la BD
-        $user = new User([
-            'prenom' => $validatedData['prenom'],
-            'nom' => $validatedData['nom'],
-            'birthdate' => $validatedData['birthdate'],
-            'email' => $validatedData['email'],
-            'telephone' => $validatedData['telephone'],
-            'password' => Hash::make($validatedData['password']),
-        ]);
-        $user->save();
-        
-        // Création de l'étudiant dans la BD
-
-        $etudiant = new Etudiants;
-        $etudiant->id = $user->id;
-        $etudiant->ville_id = $validatedData['ville_id'];
-        
-        $etudiant->save();
-
-        return redirect(route('login'));
+        return view('user.create', ['user' => $user]);
     }
 
     /**
@@ -94,7 +56,7 @@ class EtudiantsController extends Controller
             'prenom'       => $request->prenom,
             'nom'        => $request->nom,
             'birthdate' => $request->birthdate,
-            'email'  => $request->email,
+            'courriel'  => $request->courriel,
             'telephone'  => $request->telephone,
             'ville_id'     => $request->ville_id
          ]);

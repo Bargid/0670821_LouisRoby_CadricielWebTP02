@@ -9,34 +9,36 @@
     <div class="table-etudiants">
     
         <div class="index-name">
-            <h3>Liste des Étudiants</h3>
+            <h3>@lang('lang.text_student_title')</h3>
         </div>
     
         <table class="styled-table">
             <thead>
                 <tr>
-                    <th>Prénom</th>
-                    <th>Nom</th>
-                    <th>Ville</th>
-                    <th>Courriel</th>
-                    <th>Téléphone</th>
-                    <th>Date de naissance</th>
+                    <th>@lang('lang.text_student_firstname')</th>
+                    <th>@lang('lang.text_student_lastname')</th>
+                    <th>@lang('lang.text_student_city')</th>
+                    <th>@lang('lang.text_student_email')</th>
+                    <th>@lang('lang.text_student_phone')</th>
+                    <th>@lang('lang.text_student_birthdate')</th>
                     {{-- <th></th> --}}
                     {{-- <th></th> --}}
                 </tr>
             </thead>
             <tbody>
-                @foreach($etudiant as $etudiant)
+                @foreach($etudiants as $etudiant)
+                
                     <tr>
-                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->prenom }}</a></td>
-                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->nom }}</a></td>
+                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->users->prenom }}</a></td>
+                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->users->nom }}</a></td>
                         <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->ville->nom }}</a></td>
-                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->courriel }}</a></td>
-                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->telephone }}</a></td>
-                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->birthdate }}</a></td>
+                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->users->email }}</a></td>
+                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->users->telephone }}</a></td>
+                        <td><a href="{{ route('etudiant.show', $etudiant->id) }}">{{ $etudiant->users->birthdate }}</a></td>
                         {{-- <a class="modifier" href="">Modifier</a> --}}
                         {{-- <a class="supprimer" href="">Supprimer</a> --}}
                     </tr>
+
                 @endforeach
             </tbody>
         </table>

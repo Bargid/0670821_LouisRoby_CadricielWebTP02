@@ -1,0 +1,18 @@
+forum_post_lang : forum_post_id, lang_id, title, body
+lang : id, lang
+
+pour tous les migration create : php artisan make:migration create_pdfs_table --create=pdfs
+pour tous les model create : php artisan make:model Pdf
+pour tous les Controllers : php artisan make:controller PdfController
+
+lien symbolic pour l'upload de files : php artisan storage:link 
+
+composer require stichoza/google-translate-php
+
+apres register, ne pas rediriger sur la page de student_list
+afficher les commentaires body_fr en francais, et body_en en anglais
+le lien pour PDF
+downlad
+
+Louis-Roby@hotmail.com : 87654321
+Bargid@hotmail.com : 12345678

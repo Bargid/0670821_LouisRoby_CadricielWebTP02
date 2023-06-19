@@ -5,37 +5,43 @@
 
 @section('content')
 
-        <div class="info-block">
-            <div class="info-block-shadow">
-                <div class="info">
-                    <div><h3>Information de l'Étudiant</h3></div>
-
-                    <div class="info-background">
-                        <div class="ligne-info">
-                            <h4>Prénom : </h4> <p>{{$etudiant->prenom}}</p>
+        <div class="show-page">
+            <div class="info-block">
+                <div class="info-block-shadow">
+                    <div class="info">
+                        <div><h3>@lang('lang.text_student_title')</h3></div>
+                        @if (session('success'))
+                            <div class="pdf-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        <div class="info-background">
+                            <div class="ligne-info">
+                                <h4>@lang('lang.text_student_firstname') : </h4> <p>{{$etudiant->users->prenom}}</p>
+                            </div>
+                            <div class="ligne-info">
+                                <h4>@lang('lang.text_student_lastname') : </h4> <p>{{$etudiant->users->nom}}</p>
+                            </div>
+                            <div class="ligne-info">
+                                <h4>@lang('lang.text_student_city') : </h4> <p>{{$etudiant->ville->nom}}</p>
+                            </div>
+                            <div class="ligne-info">
+                                <h4>@lang('lang.text_student_email') : </h4> <p>{{$etudiant->users->email}}</p>
+                            </div>
+                            <div class="ligne-info">
+                                <h4>@lang('lang.text_student_phone') : </h4> <p>{{$etudiant->users->telephone}}</p>
+                            </div>
+                            <div class="ligne-info">
+                                <h4>@lang('lang.text_student_birthdate') : </h4> <p>{{$etudiant->users->birthdate}}</p>
+                            </div>
                         </div>
-                        <div class="ligne-info">
-                            <h4>Nom : </h4> <p>{{$etudiant->nom}}</p>
-                        </div>
-                        <div class="ligne-info">
-                            <h4>Ville : </h4> <p>{{$etudiant->ville->nom}}</p>
-                        </div>
-                        <div class="ligne-info">
-                            <h4>Courriel : </h4> <p>{{$etudiant->courriel}}</p>
-                        </div>
-                        <div class="ligne-info">
-                            <h4>Téléphone : </h4> <p>{{$etudiant->telephone}}</p>
-                        </div>
-                        <div class="ligne-info">
-                            <h4>Date de Naissance : </h4> <p>{{$etudiant->birthdate}}</p>
-                        </div>
+                        @if(auth()->check() && $etudiant->users->id === auth()->user()->id)
+                            <div class="bouton-block">
+                                <a class="modifier" href="{{ route('etudiant.edit', $etudiant->id) }}">@lang('lang.text_gen_modify')</a>
+                                <a class="supprimer" id="supprimerBtn" href="">@lang('lang.text_gen_delete')</a>
+                            </div>
+                        @endif
                     </div>
-
-                    <div class="bouton-block">
-                        <a class="modifier" href="{{ route('etudiant.edit', $etudiant->id) }}">Modifier</a>
-                        <a class="supprimer" id="supprimerBtn" href="">Supprimer</a>
-                    </div>
-
                 </div>
             </div>
         </div>

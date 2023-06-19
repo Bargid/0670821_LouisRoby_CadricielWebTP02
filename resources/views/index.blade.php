@@ -3,8 +3,12 @@
 @section('content')
 
         <div class="accueil">
-            <h1>Répertoire des Étudiants</h1>
-            <p>Un répertoire pour tous savoir sur vos... <span>Étudiants</span></p>
+            <h1>@lang('lang.text_accueil_pagehero')</h1>
+            <img src="{{ asset('images/Cmaisonneuve_logo.png') }}" alt="Logo">
+            <p>@lang('lang.text_accueil_pageherotext')</p>
+
         </div>
+
+
 
 @endsection

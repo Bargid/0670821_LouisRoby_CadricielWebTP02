@@ -1,6 +1,11 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:wght@300&family=Tsukimi+Rounded:wght@500&display=swap');
 
+
+.separation {
+    color: white;
+}
+
 .header-menu,
 footer {
     display: flex;
@@ -36,6 +41,10 @@ footer {
     color: lightgrey;
 }
 
+.hello-user {
+    color: white;
+}
+
 body {
     margin: 0;
 }
@@ -58,6 +67,7 @@ body {
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     font-size: 18px;
+    margin-top: 40px;
 }
 
 .accueil p > span {
@@ -88,7 +98,7 @@ body {
     box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.div-label {
+.div-label, .div-label-upload {
     display: flex;
     flex-direction: column;
     width: 300px;
@@ -107,6 +117,10 @@ body {
 
 .div-label > label {
     width: 200px;
+}
+
+.div-label-upload {
+    width: 400px !important;
 }
 
 .create-name h3,
@@ -146,6 +160,32 @@ body {
     letter-spacing: 3px;
 }
 
+.login-expander {
+    height: 100vh;
+}
+
+.logout-div, .login-div {
+    padding: 6px;
+    padding-left: 7px;
+    margin-left: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.logout-div {
+    background-color: #E34234;
+}
+
+.login-div {
+    background-color: limegreen;
+}
+
+.bonjour-log {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
 /* ================== TABLE ETUDIANTS ================== */
 
 .table-etudiants {
@@ -212,6 +252,10 @@ a {
 
 /* ================== PAGE SHOW ================== */
 
+.show-page {
+    height: 100vh;
+}
+
 .info-block {
     display: flex;
     justify-content: center;
@@ -221,7 +265,7 @@ a {
 .info-block-shadow {
     display: flex;
     justify-content: center;
-    width: 30%;
+    width: 50%;
 
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -229,6 +273,8 @@ a {
 .info {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .info h3 {
@@ -263,11 +309,26 @@ a {
     border-radius: 5px;
     padding: 15px;
     margin-bottom: 20px;
+    margin-top: 10px;
+    width: 600px;
+}
+
+.info-background p {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.info-background h4 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1px;
 }
 
 form .modifier {
     display: block;
     width: auto;
+    cursor: pointer;
 
     border: none;
 }
@@ -358,3 +419,292 @@ form .modifier {
     cursor: pointer;
   }
 
+/* ========== FORUM ========== */
+
+.titre-forum {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 20px;
+    margin-top: 15px;
+}
+
+.page-forum {
+    display: flex;
+    justify-content: center;
+}
+
+.top-forum {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-bottom: 20px;
+}
+
+.top-forum a {
+    background-color: limegreen;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.top-forum a:hover {
+    color: lightgray;
+}
+
+.center-forum {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.center-forum .titre-page-forum {
+    align-self: center;
+  }
+
+.titre-page-forum,
+.titre-forum-post,
+.ifempty,
+.post-forum {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.post-forum span {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.titre-page-forum {
+    font-size: 36px;
+}
+
+.titre-page-forum-pdf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titre-page-forum-pdf h4 {
+    font-size: 36px;
+    font-family: 'Bebas Neue', sans-serif;
+    margin-bottom: 10px;
+}
+
+.titre-forum-post {
+    font-size: 24px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.titre-forum-post a {
+    transition: 0.2s;
+}
+
+.titre-forum-post a:hover {
+    color: lightgrey;
+}
+
+.post-text-forum {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 10px;
+    padding: 10px;
+
+    border: solid black 1px;
+    border-radius: 5px;
+    background-color: rgba(136, 136, 136, 0.3);
+}
+
+.modifsupp {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-left: 20px;
+}
+
+.whole-post {
+    display: flex;
+    align-items: center;
+}
+
+.whole-post .modifsupp {
+    margin-left: auto;
+}
+
+.supp {
+    text-align: center;
+    background-color: #e34234;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    padding: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    margin-right: 20px;
+    transition: 0.2s;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modif {
+    text-align: center;
+    background-color: limegreen;
+    border-radius: 5px;
+    color: white;
+    padding: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    margin-right: 20px;
+    transition: 0.2s;
+}
+
+.supp:hover, .modif:hover {
+    color: lightgray;
+}
+
+/* ================== TABLE ETUDIANTS ================== */
+
+.table-etudiants {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70%;
+}
+
+.container-table-etudiants {
+    display: flex;
+    justify-content: center;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid rgb(150, 149, 149);
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #026d58;
+}
+
+.styled-table tbody tr:hover a{
+    font-weight: bold;
+    color: #016d58;
+}
+
+.index-name {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/* =================== MODAL ==================== */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    text-align: center;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 25%;
+    border-radius: 5px;
+  }
+
+  .modal-content p {
+    margin-top: 0px;
+
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  .modal-content span {
+    cursor: pointer;
+  }
+  
+  .close {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    width: 100%;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+/* ========== Success and errors ========== */
+
+.pdf-success {
+    font-family: 'Lato', sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+    padding: 10px;
+    border: solid 2px #016d58;
+    border-radius: 5px;
+
+    color: #016d58;
+    background-color: rgba(50, 205, 50, 0.5);
+}
+
+.pdf-info {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+}
